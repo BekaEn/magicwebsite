@@ -1,19 +1,7 @@
 [build]
-  command = """
-    # First, try to create the missing directory structure
-    mkdir -p _includes/layouts src/_includes/layouts
-    
-    # Copy files to ensure they exist in both potential locations
-    cp -r src/_includes/* _includes/ 2>/dev/null || true
-    
-    # Create post.html in both locations to be safe
-    echo '{% extends \"layouts/base.html\" %}{% block head %}<link rel=\"stylesheet\" href=\"/assets/css/blog.css\"/>{% endblock %}{% block body %}<main id=\"main\"><section class=\"blog-post\"><div class=\"container\"><h1>{{ title }}</h1><div class=\"post-date\">{{ page.date | postDate }}</div><div class=\"post-content\">{{ content | safe }}</div></div></section></main>{% endblock %}' > src/_includes/layouts/post.html
-    echo '{% extends \"layouts/base.html\" %}{% block head %}<link rel=\"stylesheet\" href=\"/assets/css/blog.css\"/>{% endblock %}{% block body %}<main id=\"main\"><section class=\"blog-post\"><div class=\"container\"><h1>{{ title }}</h1><div class=\"post-date\">{{ page.date | postDate }}</div><div class=\"post-content\">{{ content | safe }}</div></div></section></main>{% endblock %}' > _includes/layouts/post.html
-    
-    # Run the build
-    npm run build
-  """
-  publish = "public"
+  publish = "public/"
+  command = "npm run build"
 
 [[plugins]]
+  # Installs the Lighthouse Build Plugin for all deploy contexts
   package = "@netlify/plugin-lighthouse"
