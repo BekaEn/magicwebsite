@@ -1,7 +1,8 @@
+cat > netlify.toml << 'EOL'
 [build]
-  publish = "public/"
-  command = "npm run build"
+  command = "mkdir -p src/_includes/layouts && echo '{% extends \"layouts/base.html\" %}\n\n{% block head %}\n    <link rel=\"stylesheet\" href=\"/assets/css/blog.css\"/>\n{% endblock %}\n\n{% block body %}\n    <main id=\"main\">\n        <section class=\"blog-post\">\n            <div class=\"container\">\n                <h1>{{ title }}</h1>\n                <div class=\"post-date\">{{ page.date | postDate }}</div>\n                <div class=\"post-content\">\n                    {{ content | safe }}\n                </div>\n            </div>\n        </section>\n    </main>\n{% endblock %}' > src/_includes/layouts/post.html && ls -la src/_includes/layouts/ && npm run build"
+  publish = "public"
 
 [[plugins]]
-  # Installs the Lighthouse Build Plugin for all deploy contexts
   package = "@netlify/plugin-lighthouse"
+EOL
