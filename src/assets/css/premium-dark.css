@@ -126,6 +126,14 @@ p, li, span {
   background-color: var(--dark-bg);
 }
 
+/* Footer logo sizing */
+#cs-footer-1783 .cs-logo-img {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+}
+
 /* Card groups and items */
 .cs-card-group .cs-item {
   background-color: var(--dark-accent);
