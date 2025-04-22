@@ -1,4 +1,4 @@
-build]
+[build]
   command = """
     # First, try to create the missing directory structure
     mkdir -p _includes/layouts src/_includes/layouts
