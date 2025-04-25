@@ -243,7 +243,7 @@
 /* Large Desktop Parallax Effect - 100px */
 @media only screen and (min-width: 100rem) {
   #hero-1618 .cs-background {
-    background: url("/assets/images/banner-img1.jpg");
+    background: url("/assets/images/painters/painter1.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
