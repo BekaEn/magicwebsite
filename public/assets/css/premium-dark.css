@@ -74,7 +74,7 @@ p, li, span {
 /* Hero section */
 #hero-1618 .cs-background:before {
   background-color: rgba(0, 0, 0, 0.7);
-  opacity: 1;
+  opacity: 0.7;
 }
 
 #hero-1618 .cs-item {
